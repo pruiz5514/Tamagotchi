@@ -15,22 +15,38 @@
     </header>
     <main>
         <section>
-            <div class="level-container">
-                <div class="level__indicator"> Salud </div>
-                <div class="level__indicator">Cansancio</div>
-                <div class="level__indicator">Alimentacion</div>
-                <div class="level__indicator">Felicidad</div>
+            <div class="screen-container">
+                <div class="level-container">
+                    <div class="level__indicator"> 
+                        <span>Salud</span> 
+                        <div class="level__bar healthLevel__bar"></div>
+                    </div>
+                    <div class="level__indicator"> 
+                        <span>Cansancio</span> 
+                        <div class="level__bar energyLevel__bar"></div>
+                    </div>
+                    <div class="level__indicator"> 
+                        <span>Alimentacion</span> 
+                        <div class="level__bar foodLevel__bar"></div>
+                    </div>
+                    <div class="level__indicator"> 
+                        <span>Felicidad</span> 
+                        <div class="level__bar happinessLevel__bar"></div>
+                    </div>
+                </div>
+            </div class="screen-container">
+            <div class="button-container">
+                <button class="medicine-button">Medicina</button>
+                <button class="sleep-button">Dormir</button>
+                <button class="food-button">Comida</button>
+                <button>Jugar</button>
             </div>
         </section>
-        <div class="button-container">
-            <button>Comida</button>
-            <button>Dormir</button>
-            <button>Jugar</button>
-            <button>Medicina</button>
-        </div>
+
     </main>
     <footer>
         <p>All rights reserved ©2024</p>
     </footer>
+    <script src="main.js"></script>
 </body>
 </html>
