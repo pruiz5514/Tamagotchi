@@ -5,7 +5,7 @@ const indicadorCansancio = document.querySelector(".energyLevel__bar");
 const botonDormir = document.querySelector(".sleep-button");
 const gameoverButton = document.querySelector(".gameover-button")
 
-let juegoTerminado = false
+barras = []
 
 function crearTemporizador(indicador, tiempoInicial) {
     let tiempo = tiempoInicial;
@@ -34,8 +34,11 @@ function crearTemporizador(indicador, tiempoInicial) {
                 nivelBarras();
             } else {
                 gameover.style.display = "flex"
+                barras.forEach(clearInterval)
             }
         }, s);
+
+        barras.push(intervalo)
     }
 
     function reiniciar(s) {
@@ -49,6 +52,7 @@ function crearTemporizador(indicador, tiempoInicial) {
     return { iniciar, reiniciar };
 }
 
+console.log(barras)
 
 const temporizadorSalud = crearTemporizador(indicardorSalud, 100);
 const temporizadorCansancio = crearTemporizador(indicadorCansancio, 100);
