@@ -1,8 +1,11 @@
+const gameover = document.querySelector(".gameover")
 const indicardorSalud = document.querySelector(".healthLevel__bar");
 const botonMedicina = document.querySelector(".medicine-button");
 const indicadorCansancio = document.querySelector(".energyLevel__bar");
 const botonDormir = document.querySelector(".sleep-button");
+const gameoverButton = document.querySelector(".gameover-button")
 
+let juegoTerminado = false
 
 function crearTemporizador(indicador, tiempoInicial) {
     let tiempo = tiempoInicial;
@@ -30,7 +33,7 @@ function crearTemporizador(indicador, tiempoInicial) {
                 tiempo--;
                 nivelBarras();
             } else {
-                console.log("Perdiste");
+                gameover.style.display = "flex"
             }
         }, s);
     }
@@ -57,3 +60,7 @@ temporizadorCansancio.iniciar(1000);
 
 botonMedicina.addEventListener("click", ()=>{temporizadorSalud.reiniciar(200)});
 botonDormir.addEventListener("click", ()=>{temporizadorCansancio.reiniciar(1000)});
+
+gameoverButton.addEventListener("click", ()=>{
+    location.reload()
+})
