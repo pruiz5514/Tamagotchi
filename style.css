@@ -20,18 +20,18 @@ header{
 
 main{
     width: 100%;
-    min-height: calc(100vh - 24vh);
+    min-height: calc(100vh - 25vh);
     padding-top: 15px;
 }
 
 section{
     width: 80%;
     max-width: 1200px;
-    height: 450px;
     max-height: calc(100vh - 100px);
     margin: 20px auto;
     background-color: #F3F3F3;
     padding-top: 50px;
+    padding-bottom: 32px;
     border-radius: 15px;
     display: flex;
     flex-direction: column;
@@ -41,7 +41,7 @@ section{
 
 .principal-container{
     width: 80%;
-    height: 300px;
+    height: calc(100vh);
     border: 2px solid black;
     margin: 0 auto;
     margin-bottom: 20px;
@@ -52,7 +52,8 @@ section{
     flex-direction: column;
     flex-wrap: wrap;
     position: relative;
-    object-fit: cover;
+    object-fit: contain;
+    object-position: center -4.5px; 
 }
 .screen-container{    
     display: flex;
@@ -61,18 +62,15 @@ section{
     flex-wrap: wrap;
 }
 #imagen{
-   width: 80%;
-    height: 200px;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
+    width: 100%;
+    max-height: 86%;
+    display: block;
     position: absolute;
-    align-self: center;
-    justify-content: center;
-    left: 10%;
-    right: 10%;
-    margin-top: 16px;
-
+    object-fit:cover;
+    border-radius: 15px;
+    bottom: 0%; 
+    object-position: 0% center;
+    
 }
 
 .level-container{
@@ -80,7 +78,7 @@ section{
     height: 40px;
     display: flex;
     flex-direction: row;
-    flex-wrap:wrap;
+    flex-wrap: wrap;
     align-items: flex-start;
     justify-content: space-between;
     gap: 16px;
@@ -115,10 +113,10 @@ section{
 .button-container{
     width: 80%;
     height: auto;
-    margin: 0 auto;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    margin: 0 auto;
 }
 
 .button-container button{
@@ -140,11 +138,13 @@ section{
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    margin-bottom: 0px;
 }
 .gameover span{
     font-size: 110px;
     font-weight: bold;
     color: white;
+    text-align: center;
 }
 .gameover-button{
     margin-top: 10px;
@@ -170,4 +170,32 @@ footer{
     margin-top:25px;
     margin-bottom: 0px;
     font-weight: bold;
+}
+
+
+@media (max-width:639px){
+    main{
+        font-size: 7px;
+    }
+    
+    .button-container button{
+        font-size: 9px;
+        width: auto;
+        max-width: 100%;
+    }
+}
+@media (max-width:280px){
+   
+    main{
+        font-size: 6px;
+    }
+    .button-container button{
+        font-size: 6px;
+        width: auto;
+        max-width: 100%;    
+    }
+    .gameover span{
+        font-size: 60px;
+       
+    }
 }

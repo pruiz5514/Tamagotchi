@@ -48,6 +48,8 @@ function crearTemporizador(indicador, tiempoInicial) {
                 tiempo--;
                 nivelBarras();
             } else {
+                imagen.src = "imagenes/muerto.png";
+                imagenMostrada = "muerto"
                 gameover.style.display = "flex"
                 barras.forEach(clearInterval)
             }
