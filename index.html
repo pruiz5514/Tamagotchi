@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,14 +9,17 @@
     <!--Estilos de fuentes de letras-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap" rel="stylesheet">
-     <!--Estilos propios-->
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap"
+        rel="stylesheet">
+    <!--Estilos propios-->
     <link rel="stylesheet" href="./style.css">
     <title>Tamagotchi</title>
 </head>
+
 <body>
     <div class="gameover">
-        <span>GAME OVER</span> 
+        <span>GAME OVER</span>
         <button class="gameover-button">Reiniciar</button>
     </div>
     <header>
@@ -23,22 +27,29 @@
     </header>
     <main>
         <section>
-            <div class="screen-container">
-                <div class="level-container">
-                    <div class="level__indicator"> 
-                        <div class="level__bar healthLevel__bar"><span>Salud</span></div>
+            <div class="principal-container">
+                <div class="screen-container">
+                    <div class="level-container">
+                        <div class="level__indicator">
+                            <div class="level__bar healthLevel__bar"><span>Salud</span></div>
+                        </div>
+                        <div class="level__indicator">
+                            <div class="level__bar energyLevel__bar"><span>Energia</span></div>
+                        </div>
+                        <div class="level__indicator">
+                            <div class="level__bar foodLevel__bar"><span>Alimentacion</span></div>
+                        </div>
+                        <div class="level__indicator">
+                            <div class="level__bar happinessLevel__bar"><span>Felicidad</span></div>
+                        </div>
                     </div>
-                    <div class="level__indicator"> 
-                        <div class="level__bar energyLevel__bar"><span>Energia</span></div>
-                    </div>
-                    <div class="level__indicator" > 
-                        <div class="level__bar foodLevel__bar"><span>Alimentacion</span></div>
-                    </div>
-                    <div class="level__indicator">  
-                        <div class="level__bar happinessLevel__bar"><span>Felicidad</span></div>
-                    </div>   
+                </div class="screen-container">
+                <div class="imagen-container">
+                    <img id="imagen" src="imagenes/feliz.jpg" alt="picachu">
                 </div>
-            </div class="screen-container">
+            </div>
+
+
             <div class="button-container">
                 <button class="medicine-button">Medicina</button>
                 <button class="sleep-button">Dormir</button>
@@ -53,4 +64,5 @@
     </footer>
     <script src="main.js"></script>
 </body>
+
 </html>
