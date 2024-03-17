@@ -1,19 +1,22 @@
 // Salud
 const indicardorSalud = document.querySelector(".healthLevel__bar");
 const botonMedicina = document.querySelector(".medicine-button");
-// Cansancio
-const indicadorCansancio = document.querySelector(".energyLevel__bar");
+// Energia
+const indicadorEnergia = document.querySelector(".energyLevel__bar");
 const botonDormir = document.querySelector(".sleep-button");
 // Alimentacion
 const indicadorAlimentacion = document.querySelector(".foodLevel__bar");
 const botonAlimentacion = document.querySelector(".food-button");
+//Felicidad
+const indicadorFelicidad = document.querySelector(".happinessLevel__bar");
+const botonJugar = document.querySelector(".play-button");
 // Gameover
 const gameoverButton = document.querySelector(".gameover-button")
 const gameover = document.querySelector(".gameover")
 
-barras = []
+let barras = []
 
-/** Temporizador para disminuir las barras */
+/* Temporizador para disminuir las barras */
 function crearTemporizador(indicador, tiempoInicial) {
     let tiempo = tiempoInicial;
     let intervalo;
@@ -63,18 +66,25 @@ console.log(barras)
 
 // Crea el temporizador para las barras
 const temporizadorSalud = crearTemporizador(indicardorSalud, 100);
-const temporizadorCansancio = crearTemporizador(indicadorCansancio, 100);
+const temporizadorEnergia = crearTemporizador(indicadorEnergia, 100);
 const temporizadorAlimentacion = crearTemporizador(indicadorAlimentacion, 100);
+const temporizadorFelicidad = crearTemporizador(indicadorFelicidad, 100);
+
+//generación de número aleatorio entre 100 y 300ms para que la velocidad de las barras cambie 
+// estructura Math.floor(Math.random() * (maximo - minimo + 1)) + minimo;
+let valorRandomSpeed = Math.floor(Math.random()*(300-100 +1))+100;
 
 // Inicia 
-temporizadorSalud.iniciar(200);
-temporizadorCansancio.iniciar(1000);
-temporizadorAlimentacion.iniciar(1500);
+temporizadorSalud.iniciar(valorRandomSpeed);
+temporizadorEnergia.iniciar(valorRandomSpeed);
+temporizadorAlimentacion.iniciar(valorRandomSpeed);
+temporizadorFelicidad.iniciar(valorRandomSpeed);
 
 
-botonMedicina.addEventListener("click", ()=>{temporizadorSalud.reiniciar(200)});
-botonDormir.addEventListener("click", ()=>{temporizadorCansancio.reiniciar(1000)});
-botonAlimentacion.addEventListener("click", ()=>{temporizadorAlimentacion.reiniciar(1200)});
+botonMedicina.addEventListener("click", ()=>{temporizadorSalud.reiniciar(valorRandomSpeed)});
+botonDormir.addEventListener("click", ()=>{temporizadorEnergia.reiniciar(valorRandomSpeed)});
+botonAlimentacion.addEventListener("click", ()=>{temporizadorAlimentacion.reiniciar(valorRandomSpeed)});
+botonJugar.addEventListener("click", ()=>{temporizadorFelicidad.reiniciar(valorRandomSpeed)});
 
 gameoverButton.addEventListener("click", ()=>{
     location.reload()

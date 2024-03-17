@@ -1,13 +1,17 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--Para resetear los estilos por defecto y que tome mis propios estilos-->
+    <link rel="stylesheet" href="./reset.css">
+    <!--Estilos de fuentes de letras-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap" rel="stylesheet">
+     <!--Estilos propios-->
     <link rel="stylesheet" href="./style.css">
-    <title>Document</title>
+    <title>Tamagotchi</title>
 </head>
 <body>
     <div class="gameover">
@@ -22,34 +26,30 @@
             <div class="screen-container">
                 <div class="level-container">
                     <div class="level__indicator"> 
-                        <span>Salud</span> 
-                        <div class="level__bar healthLevel__bar"></div>
+                        <div class="level__bar healthLevel__bar"><span>Salud</span></div>
                     </div>
                     <div class="level__indicator"> 
-                        <span>Cansancio</span> 
-                        <div class="level__bar energyLevel__bar"></div>
+                        <div class="level__bar energyLevel__bar"><span>Energia</span></div>
                     </div>
-                    <div class="level__indicator"> 
-                        <span>Alimentacion</span> 
-                        <div class="level__bar foodLevel__bar"></div>
+                    <div class="level__indicator" > 
+                        <div class="level__bar foodLevel__bar"><span>Alimentacion</span></div>
                     </div>
-                    <div class="level__indicator"> 
-                        <span>Felicidad</span> 
-                        <div class="level__bar happinessLevel__bar"></div>
-                    </div>
+                    <div class="level__indicator">  
+                        <div class="level__bar happinessLevel__bar"><span>Felicidad</span></div>
+                    </div>   
                 </div>
             </div class="screen-container">
             <div class="button-container">
                 <button class="medicine-button">Medicina</button>
                 <button class="sleep-button">Dormir</button>
                 <button class="food-button">Comida</button>
-                <button>Jugar</button>
+                <button class="play-button">Jugar</button>
             </div>
         </section>
 
     </main>
     <footer>
-        <p>All rights reserved ©2024</p>
+        <p>Todos los derechos reservados ©2024</p>
     </footer>
     <script src="main.js"></script>
 </body>
