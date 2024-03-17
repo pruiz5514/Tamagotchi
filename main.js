@@ -1,9 +1,19 @@
+// Salud
 const indicardorSalud = document.querySelector(".healthLevel__bar");
 const botonMedicina = document.querySelector(".medicine-button");
+// Cansancio
 const indicadorCansancio = document.querySelector(".energyLevel__bar");
 const botonDormir = document.querySelector(".sleep-button");
+// Alimentacion
+const indicadorAlimentacion = document.querySelector(".foodLevel__bar");
+const botonAlimentacion = document.querySelector(".food-button");
+// Gameover
+const gameoverButton = document.querySelector(".gameover-button")
+const gameover = document.querySelector(".gameover")
 
+barras = []
 
+/** Temporizador para disminuir las barras */
 function crearTemporizador(indicador, tiempoInicial) {
     let tiempo = tiempoInicial;
     let intervalo;
@@ -30,9 +40,12 @@ function crearTemporizador(indicador, tiempoInicial) {
                 tiempo--;
                 nivelBarras();
             } else {
-                console.log("Perdiste");
+                gameover.style.display = "flex"
+                barras.forEach(clearInterval)
             }
         }, s);
+
+        barras.push(intervalo)
     }
 
     function reiniciar(s) {
@@ -46,14 +59,23 @@ function crearTemporizador(indicador, tiempoInicial) {
     return { iniciar, reiniciar };
 }
 
+console.log(barras)
 
+// Crea el temporizador para las barras
 const temporizadorSalud = crearTemporizador(indicardorSalud, 100);
 const temporizadorCansancio = crearTemporizador(indicadorCansancio, 100);
+const temporizadorAlimentacion = crearTemporizador(indicadorAlimentacion, 100);
 
-
+// Inicia 
 temporizadorSalud.iniciar(200);
 temporizadorCansancio.iniciar(1000);
+temporizadorAlimentacion.iniciar(1500);
 
 
 botonMedicina.addEventListener("click", ()=>{temporizadorSalud.reiniciar(200)});
 botonDormir.addEventListener("click", ()=>{temporizadorCansancio.reiniciar(1000)});
+botonAlimentacion.addEventListener("click", ()=>{temporizadorAlimentacion.reiniciar(1200)});
+
+gameoverButton.addEventListener("click", ()=>{
+    location.reload()
+})
