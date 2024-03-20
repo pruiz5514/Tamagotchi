@@ -1,11 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+
 *{
 	Box-sizing: border-box;
-    font-family: "DM Sans", sans-serif;
 }
+
+body{
+    min-height: 100vh;
+    font-family: "Lato", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 16px;
+    color: #000;
+}
+
 h1{
+    font-family: "Lato", sans-serif;
     font-weight: 900;
     font-size:xx-large;
     color: white;
+    font-size: 42px;
+    margin: 32px 0;
 }
 
 header{
@@ -15,7 +29,7 @@ header{
     align-items: center;
     justify-content: center;
     margin: 0 auto; 
-    background-color:  rgb(26, 21, 196);
+    background-color:  rgb(60, 54, 224);  
 }
 
 main{
@@ -41,19 +55,19 @@ section{
 
 .principal-container{
     width: 80%;
-    height: calc(100vh);
     border: 2px solid black;
     margin: 0 auto;
     margin-bottom: 20px;
     border-radius: 15px;
     box-shadow: 0px 4px 8px rgba(89, 73, 30, 0.16);
-    
+    background-color:  white;
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
     position: relative;
     object-fit: contain;
     object-position: center -4.5px; 
+   
 }
 .screen-container{    
     display: flex;
@@ -61,16 +75,21 @@ section{
     justify-content: center;
     flex-wrap: wrap;
 }
+
+.imagen-container{
+    display:flex;
+    align-items:center;
+    justify-content: center;
+}
+
 #imagen{
-    width: 100%;
-    max-height: 86%;
+    width: 500px;
+    height: 400px;
     display: block;
-    position: absolute;
-    object-fit:cover;
+    object-fit:contain;
     border-radius: 15px;
     bottom: 0%; 
-    object-position: 0% center;
-    
+    object-position: 0% 0% 0% 0%;
 }
 
 .level-container{
@@ -161,8 +180,7 @@ section{
 footer{
     height: 12vh;
     width: 100%;
-   /* background-color: #F3F3F3;*/
-    background-color:  rgb(26, 21, 196);
+    background-color:  rgb(60, 54, 224);
     color: white;
     display: flex;
     justify-content: center;
@@ -172,6 +190,14 @@ footer{
     font-weight: bold;
 }
 
+@media (max-width:1024px){
+    
+    #imagen{
+        width: 400px;
+        height: 300px;
+    }
+
+}
 
 @media (max-width:639px){
     main{
@@ -183,6 +209,17 @@ footer{
         width: auto;
         max-width: 100%;
     }
+
+    #imagen{
+        width: 200px;
+        height: 100px;
+    }
+
+    .level-container{
+        gap: 0px;
+        
+    }
+
 }
 @media (max-width:280px){
    
@@ -198,4 +235,14 @@ footer{
         font-size: 60px;
        
     }
+    #imagen{
+        width: 150px;
+        height: 100px;
+    }
+
+    .principal-container{
+        gap:16px;
+    }
 }
+
+

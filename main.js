@@ -48,7 +48,7 @@ function crearTemporizador(indicador, tiempoInicial) {
                 tiempo--;
                 nivelBarras();
             } else {
-                imagen.src = "imagenes/muerto.png";
+                imagen.src = "imagenes/muerto.svg";
                 imagenMostrada = "muerto"
                 gameover.style.display = "flex"
                 barras.forEach(clearInterval)
@@ -62,7 +62,7 @@ function crearTemporizador(indicador, tiempoInicial) {
         tiempo = tiempoInicial;
         nivelBarras();
         iniciar(s);
-        imagen.src = "imagenes/feliz.jpg";
+        imagen.src = "imagenes/feliz.svg";
         imagenMostrada = "feliz";
     }
 
@@ -102,28 +102,27 @@ function cambiarImagen(tiempo, indicador) {
     if (tiempo <= 45 && imagenMostrada == "feliz") {
         switch (indicador.className) {
             case 'level__bar healthLevel__bar':
-                imagen.src = "imagenes/enfermo.png";
+                imagen.src = "imagenes/enfermo.svg";
                 imagenMostrada = "enfermo";
                 break;
             case 'level__bar foodLevel__bar':
-                imagen.src = "imagenes/hambre.jpg";
+                imagen.src = "imagenes/hambre.svg";
                 imagenMostrada = "hambre"
                 break;
             case 'level__bar energyLevel__bar':
-                imagen.src = "imagenes/cansado.jpg";
+                imagen.src = "imagenes/cansado.svg";
                 imagenMostrada = "cansado"
                 break;
             default:
-                imagen.src = "imagenes/triste.jpg";
+                imagen.src = "imagenes/triste.svg";
                 imagenMostrada = "triste"
         }
     }
 
 }
 
-
 gameoverButton.addEventListener("click", () => {
     location.reload()
-    imagen.src = "imagenes/feliz.jpg";
+    imagen.src = "imagenes/feliz.svg";
     imagenMostrada = "feliz";
 })
